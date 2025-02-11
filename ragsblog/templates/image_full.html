@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <a href="javascript:history.go(-1)">
+                <img src="{{ image.image.url }}" alt="Image for post {{ image.post.id }}">
+        </a>      
+{% endblock %}
+
+
