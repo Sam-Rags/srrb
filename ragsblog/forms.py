@@ -9,12 +9,12 @@ class PostForm(forms.ModelForm):
             "text",
         ]
 
-class ImageForm(forms.ModelForm):
+class ImageForm(forms.Form):
     image = forms.ImageField(
         label="Image",
-        widget=forms.ClearableFileInput(attrs={'multiple': True}),
+        required=False
     )
 
     class Meta:
         model = Image
-        fields = ("image",)
+        fields = ["image",]

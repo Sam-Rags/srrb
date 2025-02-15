@@ -25,16 +25,21 @@
         <div class="date">
             Post moved to Drafts folder
         </div>
+
             <form method="POST" action="{% url 'post_publish' pk=post.pk %}" class="post-form">{% csrf_token %}
                 <button type="submit" class="post btn btn-secondary"  name="publish">Publish</button>
             </form>
         {% endif %}
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <div class="clearfix">
+        <h2 class="title">{{ post.title }}</h2>
+        <p class="author">Blog post by: Sam Ragsdale</p>
         {% for image in images %}
-            <img src="{{ image.image.url }}" alt="words">
+        <img id="postimage" src="{{ image.image.url }}" alt="words">
 
         {% endfor %}
+        <p class="posttext">{{ post.text|linebreaksbr }}</p>
+        
+        </div>
     </article>
 
 

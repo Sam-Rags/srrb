@@ -1,0 +1,34 @@
+* { box-sizing: border-box;}
+
+#wrapper { width: 80%; margin: auto; }
+
+#postimage {
+    float: left; margin: 10px; border-radius: 10%; 
+    height: 25%; width: 25%; margin-left: 50px; }
+
+.clearfix::after { content: ""; clear: both; display: table; }    
+
+.post { background-color: red;
+      
+}
+
+.container { background-color: blue;
+            margin: 0;
+            
+            }
+
+.header { background-color: green;}
+
+.footer { background-color: gray; 
+        text-align: center;
+        font-style: italic;
+        font-size: .8em;
+        border: 5px;}
+
+.posttext { padding: 20px; font-size: 1.5em; }
+
+.title { display: flex;
+        align-items: center;
+        justify-content: center; }
+
+.author { text-align: right;}

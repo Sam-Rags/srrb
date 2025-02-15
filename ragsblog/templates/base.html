@@ -4,45 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repair Blog</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Slackey&display=swap" rel="stylesheet">
+    <title>Sammy Rags Repair Blog</title>
     <link rel="stylesheet" href="{% static 'css/blog.css' %}?{% now "U" %}"><!--Remove everything after ? in production-->
 </head>
+<header class="header">
+    
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="new-post-draft"><span class="glyphicon glyphicon-plus">New post</span></a>
+        <a href="{%  url 'post_draft_list' %}" class="new-post-draft"><span class="glyphicon glyphicon-edit">Drafts</span></a>
+        <p class="greeting">Hello {{ user.username }}</p>
+        <form method="post" action="{% url 'logout' %}">    
+        {% csrf_token %}
+            <button type="submit" class="login-out">Logout</button>
+        </form>
+    {% else %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <button type="submit" class="login-out">Login</button>
+        </form>
+    {% endif %}
+        <h1><a href="/">Sammy Rags' Repair Blog</a></h1>
+</header>
 <body class="container">
-    <div class="header">
-        {% if user.is_authenticated %}
-            <a href="{% url 'post_new' %}" class="new-post-draft"><span class="glyphicon glyphicon-plus">New post</span></a>
-            <a href="{%  url 'post_draft_list' %}" class="new-post-draft"><span class="glyphicon glyphicon-edit">Drafts</span></a>
-            <p class="greeting">Hello {{ user.username }}</p>
-                {% csrf_token %}
-                <button type="submit" class="login-out">Logout</button>
-            </form>
-        {% else %}
-            <form method="post" action="{% url 'login' %}">
-                {% csrf_token %}
-                <button type="submit" class="login-out">Login</button>
-            </form>
-        {% endif %}
-            <h1><a href="/">Sammy Rags' Repair Blog</a></h1>
-    </div>
-        <aside class="sidebar">
-            This is the sidebar.
-        </aside>
-      <div class="content">
-          <div class="row">
-              <div class="col-md-8">
+    
+    <div id="wrapper">
+
+        <div class="content">
+            
               {% block content %}
               {% endblock %}
-              </div>
-          </div>
+            
+        </div>
+
     </div>
+    
+    
     <div class="footer">
-        <a href="{% url 'post_new' %}" class="new-post"><span class="glyphicon glyphicon-plus">New post</span></a>
-        <a href="{%  url 'post_draft_list' %}" class="new-post"><span class="glyphicon glyphicon-edit">Drafts</span></a>
+        <p>Copyright &copy; 2025 Sam Ragsdale</p>
     </div>
-</body>
+    </body>
