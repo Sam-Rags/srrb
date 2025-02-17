@@ -1,6 +1,11 @@
 * { box-sizing: border-box;}
 
-#wrapper { width: 80%; margin: auto; }
+#wrapper { display: flex;
+        align-items: stretch;
+        width: 80%; margin: auto; }
+
+#wrapper > article { flex-grow: 1; }
+#wrapper > div { flex-grow: 8; }
 
 #postimage {
     float: left; margin: 10px; border-radius: 10%; 
@@ -8,7 +13,7 @@
 
 .clearfix::after { content: ""; clear: both; display: table; }    
 
-.post { background-color: red;
+.post { background-color: #AEAEAE;
       
 }
 
@@ -23,7 +28,9 @@
         text-align: center;
         font-style: italic;
         font-size: .8em;
-        border: 5px;}
+        border: 5px;
+        position: sticky;
+        bottom: 0;}
 
 .posttext { padding: 20px; font-size: 1.5em; }
 
@@ -32,3 +39,10 @@
         justify-content: center; }
 
 .author { text-align: right;}
+
+.nav-flex { display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin: 5px;
+        background-color: #fff;
+        padding: 5px;}

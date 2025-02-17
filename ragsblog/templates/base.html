@@ -9,10 +9,14 @@
 </head>
 <header class="header">
     
-    {% if user.is_authenticated %}
-        <a href="{% url 'post_new' %}" class="new-post-draft"><span class="glyphicon glyphicon-plus">New post</span></a>
-        <a href="{%  url 'post_draft_list' %}" class="new-post-draft"><span class="glyphicon glyphicon-edit">Drafts</span></a>
+        <h1 class="blogname"><a href="/">Sammy Rags' Repair Blog</a></h1>
         <p class="greeting">Hello {{ user.username }}</p>
+</header>
+<nav class="nav-flex">
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="new-post-draft"><span class="newPost">New post</span></a>
+        <a href="{%  url 'post_draft_list' %}" class="new-post-draft"><span class="draftList">Drafts</span></a>
+        
         <form method="post" action="{% url 'logout' %}">    
         {% csrf_token %}
             <button type="submit" class="login-out">Logout</button>
@@ -23,8 +27,9 @@
             <button type="submit" class="login-out">Login</button>
         </form>
     {% endif %}
-        <h1><a href="/">Sammy Rags' Repair Blog</a></h1>
-</header>
+    <a href="/"><span class="about">About</span></a>
+    <a href="/"><span class="links">Links</span></a>
+</nav>
 <body class="container">
     
     <div id="wrapper">
@@ -39,7 +44,8 @@
     </div>
     
     
-    <div class="footer">
+    <footer class="footer">
         <p>Copyright &copy; 2025 Sam Ragsdale</p>
-    </div>
+    </footer>
     </body>
+    
