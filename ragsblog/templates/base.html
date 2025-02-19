@@ -10,7 +10,7 @@
 <header class="header">
     
         <h1 class="blogname"><a href="/">Sammy Rags' Repair Blog</a></h1>
-        <p class="greeting">Hello {{ user.username }}</p>
+        
 </header>
 <nav class="nav-flex">
     {% if user.is_authenticated %}
@@ -30,6 +30,9 @@
     <a href="/"><span class="about">About</span></a>
     <a href="/"><span class="links">Links</span></a>
 </nav>
+{% if user.is_authenticated %}
+<p class="greeting">Hello {{ user.username }}</p>
+{% endif %}
 <body class="container">
     
     <div id="wrapper">

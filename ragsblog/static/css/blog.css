@@ -1,28 +1,47 @@
 * { box-sizing: border-box;}
 
 #wrapper { display: flex;
-        align-items: stretch;
-        width: 80%; margin: auto; }
+        align-items: center;
+        width: 80%; margin: auto;
+        background-color: #5F5F5F; }
 
 #wrapper > article { flex-grow: 1; }
 #wrapper > div { flex-grow: 8; }
 
 #postimage {
     float: left; margin: 10px; border-radius: 10%; 
-    height: 25%; width: 25%; margin-left: 50px; }
+    height: 25%; width: 25%; margin-left: 50px;
+        transform: rotate(3deg); }
 
 .clearfix::after { content: ""; clear: both; display: table; }    
 
-.post { background-color: #AEAEAE;
-      
-}
+.post { background-color: #AEAEAE; }
 
-.container { background-color: blue;
+.header { display: flex;
+        background-color: #0FAA0F;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 2px solid #000; 
+        margin: 0;}
+
+.blogname { font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-transform: uppercase; }
+
+.blogname a { text-decoration: none; }
+
+.blogname a:link { color: #AEAEAE; }
+.blogname a:visited { color: #AEAEAE; }
+.blogname a:hover { color: #FFF; }
+
+.greeting { text-align: center;
+        text-transform: capitalize;
+        font-family: 'Lucida Sans', Verdana, sans-serif; }
+
+.container { background-color: #5F5F5F;
             margin: 0;
             
             }
 
-.header { background-color: green;}
 
 .footer { background-color: gray; 
         text-align: center;
@@ -43,6 +62,20 @@
 .nav-flex { display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin: 5px;
-        background-color: #fff;
+        margin: 0;
+        background-color: #0F990F;
         padding: 5px;}
+
+.nav-flex a { padding: 5px 8px; border: 1px solid black;
+                border-radius: 5px;
+                text-decoration: none; }
+
+.nav-flex a:link { color: #ffff66; background-color: #771111; }
+.nav-flex a:visited { color: #ffff66; }
+.nav-flex a:hover { color: #FFF; }
+.nav-flex button { color: #ffff66; background-color: #771111;
+                        border-radius: 5px; padding: 5px 8px; }
+
+.nav-flex button:link { color: #ffff66; background-color: #771111;}
+.nav-flex button:visited { color: #ffff66; }
+.nav-flex button:hover { color: #FFF; }
