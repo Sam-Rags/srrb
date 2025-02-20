@@ -16,4 +16,6 @@ urlpatterns = [
     path('post/<int:pk>/remove/', views.post_remove, name='post_remove'),
     path('post/<int:pk>/unpublish/', views.post_unpublish, name='post_unpublish'),
     path('media/<int:pk>/', views.img_full, name='img_full'),
+    path('links/', views.links, name="links"),
+    path('about/', views.about, name='about'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

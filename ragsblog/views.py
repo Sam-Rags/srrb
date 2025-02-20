@@ -83,3 +83,8 @@ def img_full(request, pk):
     imageform = get_object_or_404(ImageForm, pk=pk)
     return render(request, 'image_full.html', {'imageform': imageform})
 
+def links(request):
+    return render(request, 'links.html')
+
+def about(request):
+    return render(request, 'about.html')

@@ -29,7 +29,7 @@
 
 .posttitle:link { color: #FFF }
 .posttitle:visited { color: #FFF }
-.posttitle:hover { color: #dfd7d0;}
+.posttitle:hover { color: #FFBBBB;}
 
 .date { float: right;
         padding-top: 5px; }
