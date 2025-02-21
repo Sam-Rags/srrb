@@ -8,31 +8,31 @@
                 {% include './icons/pencil-fill.svg' %}
             </a>
             <form method="POST" onsubmit="return confirm_delete(self)" action="{% url 'post_remove' pk=post.pk %}" class="post-form">{% csrf_token %}
-                <button type="submit" class="post btn btn-danger" name="delete">
-                    Delete
-                </button>
+                <button type="submit" class="post btn btn-danger" name="delete">Delete</button>
             </form>
-        {% endif %}
+            
+        
         </aside>
-        {% if post.published_date %}
+            {% if post.published_date %}
             <div class="date">
-                Successfully Published at: {{ post.published_date | date:'M d, Y H:i' }}
+                Published: {{ post.published_date | date:'M d, Y - H:i' }}
             </div>
             <form method="POST" action="{% url 'post_unpublish' pk=post.pk %}" class="post-form">{% csrf_token %}
                 <button type="submit" class="post btn btn-secondary" name="publish">Unpublish</button>
             </form>
-        {% else %}
-        <div class="date">
-            Post moved to Drafts folder
-        </div>
-
+            {% else %}
             <form method="POST" action="{% url 'post_publish' pk=post.pk %}" class="post-form">{% csrf_token %}
                 <button type="submit" class="post btn btn-secondary"  name="publish">Publish</button>
             </form>
+            <div class="date">
+                Post Unpublished
+            </div>
+            {% endif %}
         {% endif %}
         <div class="clearfix">
+            <p class="author">Blog post by: Sam Ragsdale</p>
         <h2 class="title">{{ post.title }}</h2>
-        <p class="author">Blog post by: Sam Ragsdale</p>
+        
         {% for image in images %}
         <img id="postimage" src="{{ image.image.url }}" alt="words">
 

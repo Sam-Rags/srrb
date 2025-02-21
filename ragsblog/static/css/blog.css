@@ -1,16 +1,6 @@
 * { box-sizing: border-box;}
 
-#wrapper { display: flex;
-        align-items: center;
-        width: 80%; margin: auto;
-        background-color: #dfd7d0;
-        padding: 5px;
-        border: 2px solid #ABABAB;
-        box-shadow:  10px 10px 10px gray;
-        border-radius: 5px; }
 
-#wrapper > article { flex-grow: 1; }
-#wrapper > div { flex-grow: 8; }
 
 #postimage {
     float: left; margin: 10px; border-radius: 10%; 
@@ -19,10 +9,7 @@
 
 .clearfix::after { content: ""; clear: both; display: table; }    
 
-.post { background-color: #AEAEAE;
-        margin: 0;
-        padding: 10px;
-        border-bottom: 1px solid gray; }
+
 
 .posttitle { text-decoration: none; 
          }
@@ -31,8 +18,7 @@
 .posttitle:visited { color: #FFF }
 .posttitle:hover { color: #FFBBBB;}
 
-.date { float: right;
-        padding-top: 5px; }
+
 
 .header { display: flex;
         background-image: linear-gradient(#424C42, #616f6f);
@@ -74,11 +60,9 @@
 
 .posttext { padding: 20px; font-size: 1.5em; }
 
-.title { display: flex;
-        align-items: center;
-        justify-content: center; }
 
-.author { text-align: right;}
+
+
 
 .nav-flex { display: flex;
         flex-direction: row;
@@ -107,3 +91,32 @@
 .nav-flex button:link { color: #ffff66; background-color: #771111;}
 .nav-flex button:visited { color: #ffff66; }
 .nav-flex button:hover { color: #FFF; }
+
+#wrapper { display: flex;
+        align-items: center;
+        width: 80%; margin: auto;
+        background-color: #dfd7d0;
+        padding: 5px;
+        border: 2px solid #ABABAB;
+        box-shadow:  10px 10px 10px gray;
+        border-radius: 5px; }
+
+#wrapper > article { flex-grow: 1; }
+#wrapper > div { flex-grow: 8; }
+
+.post { display: flex;
+        background-color: #AEAEAE;
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;
+        border-bottom: 2px solid gray; }
+
+.actions { padding: 5px; }
+.author { padding: 5px;
+        justify-content: center; }
+.date { padding-top: 5px;
+        justify-content: flex-end; }
+
+.title { 
+        align-items: center;
+        justify-content: center; }
