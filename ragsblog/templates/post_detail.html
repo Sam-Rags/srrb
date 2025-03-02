@@ -14,7 +14,7 @@
         
         </aside>
             {% if post.published_date %}
-            <div class="date">
+            <div class="pubdate">
                 Published: {{ post.published_date | date:'M d, Y - H:i' }}
             </div>
             <form method="POST" action="{% url 'post_unpublish' pk=post.pk %}" class="post-form">{% csrf_token %}
