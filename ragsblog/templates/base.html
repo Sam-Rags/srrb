@@ -14,7 +14,7 @@
 </header>
 <nav class="nav-flex">
     
-    <a href="{% url 'links' %}"><span class="links">Links</span></a>
+    <a href="{% url 'links' %}"><span class="linkspage">Links</span></a>
     <a href="{% url 'about' %}"><span class="about">About</span></a>
     {% if user.is_authenticated %}
         <a href="{% url 'post_new' %}" class="new-post-draft"><span class="newPost">New post</span></a>

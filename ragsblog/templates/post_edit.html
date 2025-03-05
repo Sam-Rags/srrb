@@ -8,7 +8,7 @@
 </head>
 {% block content %}
 <body>
-    <form method="POST" enctype="multipart/form-data">
+    <form class="newpost" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
             {{ field }}
@@ -17,7 +17,7 @@
         {% for form in imageform %}
             {{ form }}
         {% endfor %}
-        <button type="Submit">Save</button>
+        <button class="newpostsave" type="Submit">Save</button>
     </form>
     
 </body>

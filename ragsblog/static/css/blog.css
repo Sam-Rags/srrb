@@ -1,27 +1,26 @@
 * { box-sizing: border-box;}
 
-
-
 #postimage {
-    float: left; margin: 10px; border-radius: 10%; 
-    height: 25%; width: 25%; margin-left: 50px;
+    float: left; margin: 30px 10px; border-radius: 5%; 
+    height: 25%; width: 25%;
         }
 
 .clearfix::after { content: ""; clear: both; display: table; }    
 
 .linktitle { color: #FFF;
-                text-transform: capitalize; }
+                text-transform: capitalize;
+                 }
 
 .posttitle { text-decoration: none;
                 text-transform: capitalize;
                 color: #FFF;
+                margin-left: 50px;
+                font-size: 1.5em;
          }
 
 .posttitle:link { color: #FFF }
 .posttitle:visited { color: #FFF }
 .posttitle:hover { color: #FFBBBB;}
-
-
 
 .header { display: flex;
         background-image: linear-gradient(#424C42, #616f6f);
@@ -65,7 +64,8 @@
 
 .footer p { margin: 0; }
 
-.posttext { padding: 20px; font-size: 1.5em; }
+.posttext { padding: 20px; font-size: 1.5em;
+        line-height: 2em; }
 
 .aboutme { margin: 10px;
         box-shadow: 10px 10px 10px gray;
@@ -79,7 +79,7 @@
 
 .abouttxt { margin: 10px;
         margin-top: 50px;
-        font-size: 1.1em;
+        font-size: 1.5em;
         line-height: 2em;
         color: #771111;
         }
@@ -93,6 +93,9 @@
 
 .abouttitle div { font-size: 1.5em; 
                 margin: 0;
+                margin-left: 10px;
+                color: #771111;
+                font-weight: bold;
                 }
 
 .nav-flex { display: flex;
@@ -108,20 +111,21 @@
                 text-decoration: none;
                 margin-right: 10px;
                 font-family: 'Courier New', Courier, monospace;
-                font-size: 16px; }
+                font-size: 16px;
+                border-radius: 50%; }
 
 .nav-flex a:link { color: #ffff66; background-color: #771111; }
 .nav-flex a:visited { color: #ffff66; }
-.nav-flex a:hover { color: #FFF; }
+.nav-flex a:hover { color: #FFF; box-shadow: 1px 1px 1px 1px #771111; }
 .nav-flex button { color: #ffff66; background-color: #771111;
-                        border-radius: 5px; padding: 5px 8px;
+                        border-radius: 50%; padding: 5px 8px;
                         margin-right: 10px; border: 1px solid black;
                         font-family: 'Courier New', Courier, monospace;
                         font-size: 16px; }
 
 .nav-flex button:link { color: #ffff66; background-color: #771111;}
 .nav-flex button:visited { color: #ffff66; }
-.nav-flex button:hover { color: #FFF; }
+.nav-flex button:hover { color: #FFF; box-shadow: 1px 1px 1px 1px #771111; }
 
 #wrapper { display: flex;
         align-items: center;
@@ -142,12 +146,40 @@
         padding: 10px;
         border-bottom: 2px solid gray; }
 
+.post h2 { margin: 0; 
+        padding: 5px; }
+
 .actions { padding: 5px; }
 .author { padding: 5px;
         justify-content: center; }
-.date { padding-top: 5px;
-        justify-content: flex-end; }
+.date { text-align: right; }
 
 .title { 
-        align-items: center;
-        justify-content: center; }
+        font-weight: bold;
+        color: #fff; }
+
+.newpost { display: grid;
+        padding: 5px; }
+
+#id_title { margin: 5px; }
+#id_text { margin: 5px; }
+.newpostsave { width: 50px; 
+        margin-top: 5px; }
+
+.links { font-family: 'Courier New', Courier, monospace;
+        font-size: 2em;
+        text-decoration: none;
+        width: min-content;
+        text-align: center;
+        background-color: #000;
+        border-radius: 50%;
+        margin: 10px 5px 0;
+        padding: 0 5px;
+        box-shadow: 1px 1px 1px 1px #771111;
+        }
+
+/* p { color: #fff; }         */
+
+.links:link {color: #ffff66;}
+.links:visited { color: #ffff66; background-color: #AEAEAE;}
+.links:hover { color: #fff; background-color: #771111; }
