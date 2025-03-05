@@ -9,9 +9,12 @@
 
 .clearfix::after { content: ""; clear: both; display: table; }    
 
+.linktitle { color: #FFF;
+                text-transform: capitalize; }
 
-
-.posttitle { text-decoration: none; 
+.posttitle { text-decoration: none;
+                text-transform: capitalize;
+                color: #FFF;
          }
 
 .posttitle:link { color: #FFF }
@@ -64,9 +67,33 @@
 
 .posttext { padding: 20px; font-size: 1.5em; }
 
+.aboutme { margin: 10px;
+        box-shadow: 10px 10px 10px gray;
+        transform: rotate(3deg);
+        padding: 10px;
+        padding-bottom: 20px;
+        background-color: #fff;
+        float: left;
+        margin: 20px 50px 10px 20px;
+}
 
+.abouttxt { margin: 10px;
+        margin-top: 50px;
+        font-size: 1.1em;
+        line-height: 2em;
+        color: #771111;
+        }
 
+.abouttitle {  
+        display: flex; 
+        padding: 0;
+        margin: 0;
+        width: 20%;
+        align-items: center;}
 
+.abouttitle div { font-size: 1.5em; 
+                margin: 0;
+                }
 
 .nav-flex { display: flex;
         flex-direction: row;
