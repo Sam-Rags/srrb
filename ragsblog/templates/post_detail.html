@@ -31,10 +31,10 @@
         {% endif %}
         <div class="clearfix">
             <p class="author">Blog post by: Sam Ragsdale</p>
-        <a href="\" class="posttitle"><h2 class="title">{{ post.title }}</h2></a>
+        <a href="\" class="posttitle"><h2 class="posttitle">{{ post.title }}</h2></a>
         
         {% for image in images %}
-        <img id="postimage" src="{{ image.image.url }}" alt="words">
+        <a href="{{ image.image.url }}" target="_blank"><img id="postimage" src="{{ image.image.url }}" alt="words"></a>
 
         {% endfor %}
         <p class="posttext">{{ post.text|linebreaksbr }}</p>
